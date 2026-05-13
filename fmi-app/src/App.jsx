@@ -5,7 +5,7 @@ const Dashboard = React.lazy(() => import("./pages/Dashboard"));
 const Login = React.lazy(() => import("./pages/Auth/Login"));
 const Orders = React.lazy(() => import("./pages/Orders"));
 const Customers = React.lazy(() => import("./pages/Customers"));
-const Guest = React.lazy(() => import("./pages/Guest"));
+const Guest = React.lazy(() => import("./pages/LandingPage"));
 // import Dashboard from "./pages/Dashboard";
 import AuthLayout from "./layouts/AuthLayout";
 // import Login from "./pages/auth/Login";
@@ -16,6 +16,7 @@ import Forgot from "./pages/auth/Forgot";
 import NotFound from "./pages/NotFound";
 import { Routes, Route } from "react-router-dom";
 import Loading from "./components/Loading";
+import LandingPage from './pages/LandingPage';
 
 
 function App() {
@@ -23,7 +24,7 @@ function App() {
     <Suspense fallback={<Loading />}>
       <Routes>
 
-        <Route path="/" element={<Guest />} />
+        <Route path="/" element={<LandingPage />} />
 
         <Route element={<MainLayout />}>
           <Route path="/" element={<Dashboard />} />
@@ -37,7 +38,7 @@ function App() {
           <Route path="/register" element={<Register />} />
           <Route path="/forgot" element={<Forgot />} />
         </Route>
-        
+
       </Routes>
     </Suspense>
   );

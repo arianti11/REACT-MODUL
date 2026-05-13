@@ -1,0 +1,74 @@
+[
+  {
+    "id": 1,
+    "name": "Nasi Goreng Spesial",
+    "price": 35000,
+    "image": "https://images.unsplash.com/photo-1512058564366-18510be2db19?auto=format&fit=crop&w=400&q=80",
+    "category": "Nasi",
+    "rating": 4.8,
+    "sold": 1240
+  },
+  {
+    "id": 2,
+    "name": "Mie Goreng Seafood",
+    "price": 38000,
+    "image": "https://images.unsplash.com/photo-1569718212165-3a8278d5f624?auto=format&fit=crop&w=400&q=80",
+    "category": "Mie",
+    "rating": 4.7,
+    "sold": 980
+  },
+  {
+    "id": 3,
+    "name": "Rendang Sapi",
+    "price": 55000,
+    "image": "https://images.unsplash.com/photo-1574484284002-952d92456975?auto=format&fit=crop&w=400&q=80",
+    "category": "Lauk",
+    "rating": 4.9,
+    "sold": 2100
+  },
+  {
+    "id": 4,
+    "name": "Sate Ayam Madura",
+    "price": 30000,
+    "image": "https://images.unsplash.com/photo-1529563021893-cc83c992d75d?auto=format&fit=crop&w=400&q=80",
+    "category": "Sate",
+    "rating": 4.6,
+    "sold": 1560
+  },
+  {
+    "id": 5,
+    "name": "Gado-Gado Jakarta",
+    "price": 25000,
+    "image": "https://images.unsplash.com/photo-1512621776951-a57141f2eefd?auto=format&fit=crop&w=400&q=80",
+    "category": "Sayur",
+    "rating": 4.5,
+    "sold": 870
+  },
+  {
+    "id": 6,
+    "name": "Bakso Malang",
+    "price": 28000,
+    "image": "https://images.unsplash.com/photo-1547592180-85f173990554?auto=format&fit=crop&w=400&q=80",
+    "category": "Soup",
+    "rating": 4.7,
+    "sold": 1890
+  },
+  {
+    "id": 7,
+    "name": "Ayam Geprek Crispy",
+    "price": 32000,
+    "image": "https://images.unsplash.com/photo-1562967914-608f82629710?auto=format&fit=crop&w=400&q=80",
+    "category": "Ayam",
+    "rating": 4.8,
+    "sold": 3200
+  },
+  {
+    "id": 8,
+    "name": "Soto Ayam Lamongan",
+    "price": 27000,
+    "image": "https://images.unsplash.com/photo-1555939594-58d7cb561ad1?auto=format&fit=crop&w=400&q=80",
+    "category": "Soup",
+    "rating": 4.6,
+    "sold": 1100
+  }
+]

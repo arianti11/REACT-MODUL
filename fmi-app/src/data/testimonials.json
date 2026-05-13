@@ -1,0 +1,42 @@
+[
+  {
+    "id": 1,
+    "name": "Andi Pratama",
+    "avatar": "https://avatar-placeholder.iran.liara.run/public/boy?username=andi&size=100",
+    "role": "Pelanggan Setia",
+    "review": "Sedap beneran bikin hidup lebih mudah! Saya order hampir setiap hari dan makanannya selalu fresh. Pelayanan juga super cepat, dalam 30 menit langsung sampe.",
+    "rating": 5
+  },
+  {
+    "id": 2,
+    "name": "Sari Dewi",
+    "avatar": "https://avatar-placeholder.iran.liara.run/public/girl?username=sari&size=100",
+    "role": "Food Enthusiast",
+    "review": "Platform kuliner terbaik yang pernah saya coba. Variasi menunya banyak banget, dari makanan tradisional sampai modern semua ada. Harganya juga terjangkau!",
+    "rating": 5
+  },
+  {
+    "id": 3,
+    "name": "Budi Santoso",
+    "avatar": "https://avatar-placeholder.iran.liara.run/public/boy?username=budi&size=100",
+    "role": "Profesional Muda",
+    "review": "Sebagai pekerja kantoran yang sibuk, Sedap jadi penyelamat makan siang saya. Tinggal klik, makanan datang, dan yang paling penting rasanya konsisten enak!",
+    "rating": 4
+  },
+  {
+    "id": 4,
+    "name": "Lina Marlina",
+    "avatar": "https://avatar-placeholder.iran.liara.run/public/girl?username=lina&size=100",
+    "role": "Ibu Rumah Tangga",
+    "review": "Saya sering order untuk keluarga waktu lagi males masak. Anak-anak suka semua menu yang ada di Sedap. Porsinya juga pas dan harganya worth it banget.",
+    "rating": 5
+  },
+  {
+    "id": 5,
+    "name": "Rizky Firmansyah",
+    "avatar": "https://avatar-placeholder.iran.liara.run/public/boy?username=rizky&size=100",
+    "role": "Mahasiswa",
+    "review": "Kantong pas-pasan tapi pengen makan enak? Jawabannya Sedap! Banyak promo dan diskon buat mahasiswa. Nasi goreng spesialnya juara banget, wajib coba!",
+    "rating": 5
+  }
+]
