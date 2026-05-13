@@ -5,6 +5,7 @@ const Dashboard = React.lazy(() => import("./pages/Dashboard"));
 const Login = React.lazy(() => import("./pages/Auth/Login"));
 const Orders = React.lazy(() => import("./pages/Orders"));
 const Customers = React.lazy(() => import("./pages/Customers"));
+const Guest = React.lazy(() => import("./pages/Guest"));
 // import Dashboard from "./pages/Dashboard";
 import AuthLayout from "./layouts/AuthLayout";
 // import Login from "./pages/auth/Login";
@@ -21,6 +22,9 @@ function App() {
   return (
     <Suspense fallback={<Loading />}>
       <Routes>
+
+        <Route path="/" element={<Guest />} />
+
         <Route element={<MainLayout />}>
           <Route path="/" element={<Dashboard />} />
           <Route path="/orders" element={<Orders />} />
@@ -33,6 +37,7 @@ function App() {
           <Route path="/register" element={<Register />} />
           <Route path="/forgot" element={<Forgot />} />
         </Route>
+        
       </Routes>
     </Suspense>
   );
