@@ -73,7 +73,7 @@ export default function Products() {
                                     <td className="px-6 py-4 font-semibold text-gray-900">
                                         <Link to={`/products/${item.id}`} className="text-emerald-400 hover:text-emerald-500">
                                             {item.title}
-                                        </Link>
+                                        </Link>'
                                     </td>
                                     <td className="px-6 py-4 text-gray-500">
                                         <span className="bg-gray-100 px-2.5 py-1 rounded-full text-xs font-medium capitalize">
