@@ -2,6 +2,9 @@ import { useState } from "react";
 import products from "../../data/products.json";
 
 const formatRupiah = (number) => {
+  // Antisipasi jika data harga (number) kosong atau undefined
+  if (number === undefined || number === null) return "Rp 0";
+  
   return new Intl.NumberFormat("id-ID", {
     style: "currency",
     currency: "IDR",
@@ -16,7 +19,7 @@ const StarRating = ({ rating }) => {
         <svg
           key={star}
           className={`w-3.5 h-3.5 ${
-            star <= Math.floor(rating)
+            star <= Math.floor(rating || 0)
               ? "text-yellow-400 fill-current"
               : "text-gray-300 fill-current"
           }`}
@@ -38,8 +41,8 @@ const ProductCard = ({ product }) => {
       <div className="relative h-48 overflow-hidden bg-orange-50">
         {!imgError ? (
           <img
-            src={product.image}
-            alt={product.name}
+            src={product?.image}
+            alt={product?.name}
             className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
             onError={() => setImgError(true)}
           />
@@ -51,13 +54,14 @@ const ProductCard = ({ product }) => {
         {/* Category Badge */}
         <div className="absolute top-3 left-3">
           <span className="bg-white/90 backdrop-blur-sm text-orange-600 text-xs font-bold px-3 py-1 rounded-full border border-orange-100">
-            {product.category}
+            {product?.category || "Umum"}
           </span>
         </div>
         {/* Sold Badge */}
         <div className="absolute top-3 right-3">
           <span className="bg-orange-500 text-white text-xs font-bold px-3 py-1 rounded-full">
-            🔥 {product.sold.toLocaleString("id-ID")} terjual
+            {/* AMAN: Menggunakan optional chaining (?.) untuk mencegah error crash */}
+            🔥 {product?.sold?.toLocaleString("id-ID") || 0} terjual
           </span>
         </div>
       </div>
@@ -65,12 +69,12 @@ const ProductCard = ({ product }) => {
       {/* Content */}
       <div className="p-4">
         <h3 className="font-bold text-gray-900 text-base mb-1 line-clamp-1">
-          {product.name}
+          {product?.name || "Nama Produk"}
         </h3>
 
         <div className="flex items-center gap-2 mb-3">
-          <StarRating rating={product.rating} />
-          <span className="text-xs text-gray-500 font-medium">{product.rating}</span>
+          <StarRating rating={product?.rating} />
+          <span className="text-xs text-gray-500 font-medium">{product?.rating || 0}</span>
         </div>
 
         <div className="flex items-center justify-between">
@@ -78,7 +82,7 @@ const ProductCard = ({ product }) => {
             className="text-lg font-black text-orange-500"
             style={{ fontFamily: "'Playfair Display', serif" }}
           >
-            {formatRupiah(product.price)}
+            {formatRupiah(product?.price)}
           </span>
           <button className="bg-orange-500 hover:bg-orange-600 text-white p-2 rounded-xl transition-colors shadow-md shadow-orange-200">
             <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -92,13 +96,15 @@ const ProductCard = ({ product }) => {
 };
 
 const ProductsSection = () => {
-  const categories = ["Semua", ...new Set(products.map((p) => p.category))];
+  // Antisipasi aman jika data array produk kosong
+  const safeProducts = products || [];
+  const categories = ["Semua", ...new Set(safeProducts.map((p) => p.category))];
   const [activeCategory, setActiveCategory] = useState("Semua");
 
   const filtered =
     activeCategory === "Semua"
-      ? products
-      : products.filter((p) => p.category === activeCategory);
+      ? safeProducts
+      : safeProducts.filter((p) => p.category === activeCategory);
 
   return (
     <section id="menu" className="py-24 bg-gray-50">

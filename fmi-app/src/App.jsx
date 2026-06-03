@@ -1,43 +1,47 @@
 import React, { Suspense } from 'react';
 import "./assets/tailwind.css";
 import MainLayout from "./layouts/MainLayout";
+import AuthLayout from "./layouts/AuthLayout";
+
 const Dashboard = React.lazy(() => import("./pages/Dashboard"));
 const Login = React.lazy(() => import("./pages/Auth/Login"));
 const Orders = React.lazy(() => import("./pages/Orders"));
 const Customers = React.lazy(() => import("./pages/Customers"));
-const Guest = React.lazy(() => import("./pages/LandingPage"));
-// import Dashboard from "./pages/Dashboard";
-import AuthLayout from "./layouts/AuthLayout";
-// import Login from "./pages/auth/Login";
-import Register from "./pages/auth/Register";
-import Forgot from "./pages/auth/Forgot";
-// import Orders from "./pages/Orders";
-// import Customers from "./pages/Customers";
-import NotFound from "./pages/NotFound";
+const Products = React.lazy(() => import("./pages/Products"));
+const ProductDetail = React.lazy(() => import("./pages/ProductDetail"));
+const Register = React.lazy(() => import("./pages/auth/Register"));
+const Forgot = React.lazy(() => import("./pages/auth/Forgot"));
+const NotFound = React.lazy(() => import("./pages/NotFound"));
+const LandingPage = React.lazy(() => import('./pages/LandingPage'));
+
 import { Routes, Route } from "react-router-dom";
 import Loading from "./components/Loading";
-import LandingPage from './pages/LandingPage';
-
 
 function App() {
   return (
     <Suspense fallback={<Loading />}>
       <Routes>
+        
+        {/* Halaman Landing Page Utama */}
+        {/* <Route path="/" element={<LandingPage />} /> */}
 
-        <Route path="/" element={<LandingPage />} />
-
+        {/* Halaman Dashboard dengan MainLayout wrapper */}
         <Route element={<MainLayout />}>
-          <Route path="/" element={<Dashboard />} />
+          <Route path="/" element={<Dashboard />} /> 
           <Route path="/orders" element={<Orders />} />
           <Route path="/customers" element={<Customers />} />
-          <Route path="*" element={<NotFound />} />
+          <Route path="products" element={<Products />} />
+          <Route path="/products/:id" element={<ProductDetail />}/>
         </Route>
 
+        {/* Halaman Autentikasi */}
         <Route element={<AuthLayout />}>
           <Route path="/login" element={<Login />} />
           <Route path="/register" element={<Register />} />
           <Route path="/forgot" element={<Forgot />} />
         </Route>
+
+        <Route path="*" element={<NotFound />} />
 
       </Routes>
     </Suspense>

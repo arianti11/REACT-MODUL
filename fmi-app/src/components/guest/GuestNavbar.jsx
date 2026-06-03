@@ -104,7 +104,7 @@ const GuestNavbar = () => {
             ))}
             <div className="flex gap-3 pt-3 px-4">
               <Link
-                to="/login"
+                to="/login "
                 className="flex-1 text-center py-2.5 text-orange-500 border-2 border-orange-500 rounded-xl font-semibold text-sm hover:bg-orange-500 hover:text-white transition-all"
                 onClick={() => setIsOpen(false)}
               >
