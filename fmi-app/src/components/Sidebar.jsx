@@ -48,6 +48,12 @@ export default function Sidebar() {
                             Products
                         </NavLink>
                     </li>
+                    <li>
+                        <NavLink to="/daisyui" id="menu-5" className={menuClass}>
+                            <AiOutlineInbox className="mr-4 text-xl" />
+                            Daisyui
+                        </NavLink>
+                    </li>
                 </ul>
             </div>
 

@@ -16,6 +16,7 @@ const LandingPage = React.lazy(() => import('./pages/LandingPage'));
 
 import { Routes, Route } from "react-router-dom";
 import Loading from "./components/Loading";
+import Daisyui from './pages/daisyui';
 
 function App() {
   return (
@@ -32,6 +33,7 @@ function App() {
           <Route path="/customers" element={<Customers />} />
           <Route path="products" element={<Products />} />
           <Route path="/products/:id" element={<ProductDetail />}/>
+          <Route path="daisyui" element={<Daisyui />}/> 
         </Route>
 
         {/* Halaman Autentikasi */}
